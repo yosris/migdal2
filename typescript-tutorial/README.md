@@ -67,5 +67,21 @@ https://www.typescriptlang.org/docs/handbook/tsconfig-json.html
 - files
 - exclude
 
+#### Typescript ex.
 
+- create directory
+- npm init in that directory
+- install typescript
+- create tsconfig.json
+- create a file called: task.ts
+    - title, description, date ( : Date), user.
+- create a file called: task.service.ts
+    - class TaskService
+    - private property of array tasks
+    - CRUD (Create, Read, Update, Delete) for array tasks
+- create a file called main.ts
+    - instance TaskService
+    - using the crud in TaskService.
+    
+    
 
