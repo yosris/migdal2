@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+// declare var $ : any;
 @NgModule({
   declarations: [
     AppComponent
@@ -14,3 +15,5 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+const stam = $('body');
