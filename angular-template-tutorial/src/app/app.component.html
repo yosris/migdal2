@@ -1,0 +1,135 @@
+<h1>Angular Templates</h1>
+
+<h2>
+  Interpolation
+</h2>
+
+<!-- {{expression}} -->
+
+<p>
+  {{ 1 + 1 }}
+</p>
+
+<p>
+  {{ 1 + stamNumber }}
+</p>
+
+<p>
+  {{ 5 + randomNumber()}}
+</p>
+
+<h2>
+  What is a valid expression
+</h2>
+
+
+<p>
+  <strong>
+    Expression should not have a side effect
+    don't do: =, ++
+    warning: expression for input x return y
+  </strong>
+</p>
+
+<h2>
+  Communication
+</h2>
+
+<h3>
+  Communication from class template
+</h3>
+
+<p>
+  ability of class to transfer info to template
+</p>
+<p> <!-- {{expression}} -->
+  one way: Interpolation
+</p>
+
+<p [innerText]="stamStringInP"> <!-- <div [property]="expression"></div> -->
+
+</p>
+
+<h3>
+  communication from template to class
+</h3>
+
+<p (click)="commFromTemplateToClass()">
+  Syntax: (event) = "expression with side effect"
+</p>
+
+<p (click)="stamStringInP='hello from template'">
+  Another click event
+</p>
+
+<p (click)="passingEvent($event)">
+  Passing $event
+</p>
+
+<h3>
+  Two way binding
+</h3>
+
+<p>
+  Banana in a box [(ngModel)]="public property to bind to"
+</p>
+
+<input type="text" [(ngModel)]="twoWayBinding" paintRed #paintRedVariable="paintRed" #ngModelVar="ngModel" />
+<p>
+  {{twoWayBinding}}
+</p>
+
+<input [value]="twoWayBinding2" (input)="twoWayBinding2 = $event.currentTarget.value" />
+
+<h2>
+  Communication with parent child
+</h2>
+
+<h3>
+  from parent to child
+</h3>
+
+<!-- Syntax: <mg-child [property]="expression"></mg-child> -->
+<mg-child [messageFromParent]="'hello from parent'" ></mg-child>
+
+<h3>
+  From child to parent
+</h3>
+
+<h4> <!-- <mg-child (eventName)="expression with side effect" -->
+  Events
+</h4>
+
+<mg-child (childButtonClicked)="twoWayBinding2 = $event" ></mg-child>
+<!--<mg-child (childButtonClicked)="dataFromChild()" ></mg-child>-->
+
+<h3>
+  Template refrence variable
+</h3>
+
+<p>
+  <!--Syntax <p #<variable-name>=""></p>-->
+  <!--Syntax <mg-child #<variable-name>></mg-child>-->
+</p>
+
+<p #getPElement>
+  stam text in paragraph
+</p>
+
+<p>
+  {{getPElement.innerText}}
+</p>
+
+<mg-child #mgChildInstance ></mg-child>
+
+<p>
+  {{mgChildInstance.messageToTemplateVariable()}}
+</p>
+
+
+
+
+
+
+
+
