@@ -11,6 +11,12 @@ export class AppComponent {
   public stamStringInP : string = 'hello binding to dom properties';
   public twoWayBinding : string = 'initiating the text input';
   public twoWayBinding2 : string = 'initiating the text input';
+  public groceryList : string[] = [
+    'Soya milk',
+    'Tofu',
+    'Saten'
+  ]
+  public myDate : Date = new Date();
 
   public randomNumber() : number {
     return Math.random();

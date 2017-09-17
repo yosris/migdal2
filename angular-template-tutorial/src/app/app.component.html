@@ -74,7 +74,7 @@
   Banana in a box [(ngModel)]="public property to bind to"
 </p>
 
-<input type="text" [(ngModel)]="twoWayBinding" paintRed #paintRedVariable="paintRed" #ngModelVar="ngModel" />
+<!--<input type="text" [(ngModel)]="twoWayBinding" paintRed #paintRedVariable="paintRed" #ngModelVar="ngModel" />-->
 <p>
   {{twoWayBinding}}
 </p>
@@ -101,6 +101,7 @@
 </h4>
 
 <mg-child (childButtonClicked)="twoWayBinding2 = $event" ></mg-child>
+<mg-child (childButtonClicked)="someMethodInParent($event)" ></mg-child>
 <!--<mg-child (childButtonClicked)="dataFromChild()" ></mg-child>-->
 
 <h3>
@@ -126,10 +127,95 @@
   {{mgChildInstance.messageToTemplateVariable()}}
 </p>
 
+<h2>
+  Directives
+</h2>
 
+<p>
+  two types of directives
+</p>
+<ul>
+  <li>
+    attribute directive - not changing the dom element, change property dom, bind to event in dom element
+  </li>
+  <li>
+    <!--structural directive - *<directive-name> will change dom structure: *ngIf, *ngFor-->
+  </li>
+</ul>
 
+<p highlight="red">
+  directive, will change background color when mouse over
+  <!-- <p highlight="'red'" />-->
+</p>
 
+<ul>
+  <li>
+    ElementRef - injecting dom element
+  </li>
+  <li>
+    @HostListener - bind event dom element
+  </li>
+</ul>
 
+<h2>
+  BuildIn directives
+</h2>
+
+<h2>
+  ngFor
+</h2>
+
+<ul>
+  <li *ngFor="let item of groceryList; let i = index;">
+    {{i}} {{item}}
+  </li>
+</ul>
+
+<h2>
+  ngIf
+</h2>
+
+<p *ngIf="false; else yarivElseBlock">
+  display if expression is true
+</p>
+<ng-template #yarivElseBlock>
+  <p>
+    will display when expression is false
+  </p>
+</ng-template>
+
+<h2>
+  Demo changing class
+</h2>
+<p [hidden]="false">
+  will be invisible
+</p>
+
+<h2>
+  Pipes
+</h2>
+<p>
+  takes data and manipultes the data and present it.
+  will rerender when the input is changes
+  <!--  {{expression | pipename:arg1:arg2}}-->
+</p>
+
+<p>
+  grabFromDate
+  will get from expression date
+  will return day month or year
+  {{ myDate | grabFromDate:'day' }}
+  {{ myDate | grabFromDate:'month' }}
+  {{ myDate | grabFromDate:'year' }}
+</p>
+
+<h2>
+  build in pipes
+</h2>
+
+<h3>
+  {{ 'hello world' | uppercase | lowercase}}
+</h3>
 
 
 

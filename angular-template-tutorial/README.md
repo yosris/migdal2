@@ -33,3 +33,10 @@ this input will set a title for the form
 - the output will pass a counter for the $event for the number of time the form is submitted
 - in the app component connect to the event you are creating and use it to console.log the number of
 times the user submits the form. 
+
+## Ex. Pipe
+
+- http://timeago.org/
+- install the library
+- use it in a pipe called timeago
+{{ myDate | timeago }}
