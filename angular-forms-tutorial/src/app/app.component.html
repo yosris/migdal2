@@ -1,0 +1,39 @@
+<h1>
+  Student Form
+</h1>
+
+<form #studentFormNgModel="ngForm" (ngSubmit)="studentSubmitted(studentFormNgModel, firstNameNgModel)">
+  <label>
+    First name
+  </label>
+  <input (input)="myVariable=firstNameNgModel" #domElementOfInput #firstNameNgModel="ngModel" type="text" required pattern="[a-zA-Z]+" maxlength="30" name="firstName" [(ngModel)]="student.firstName" /> <br/>
+  <p>
+    {{firstNameNgModel.valid}}
+  </p>
+  <p>
+    {{domElementOfInput.className}}
+  </p>
+  <p *ngIf="firstNameNgModel.errors?.required">
+    This field is required
+  </p>
+  <label>
+    last name
+  </label>
+  <input type="text" required name="lastName" [(ngModel)]="student.lastName" /> <br/>
+  <p>
+    {{studentFormNgModel.controls.lastName.valid}}
+  </p>
+  <label>
+    Age
+  </label>
+  <input type="text" name="age" [(ngModel)]="student.age" /> <br/>
+  <label>
+    Email
+  </label>
+  <input type="text" name="email" [(ngModel)]="student.email" /> <br/>
+  <button [disabeled]="studentFormNgModel.valid"  type="submit">
+    Submit
+  </button>
+</form>
+
+
