@@ -40,3 +40,9 @@ times the user submits the form.
 - install the library
 - use it in a pipe called timeago
 {{ myDate | timeago }}
+
+## Ex. Directives
+
+- create a directive that change the background color of
+a task when we are hovering over the list item
+- the color should change back when you hover out
