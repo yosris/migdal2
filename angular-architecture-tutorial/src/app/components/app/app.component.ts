@@ -2,7 +2,7 @@
  * Root component
  */
 
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'mg-root', // <mg-root></mg-root>
@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
   // selector: '[migdal]' // <div migdal></div>
   template: `
     <mg-greeting-form></mg-greeting-form>
+    <mg-greeting-list></mg-greeting-list>
+    
     <mg-greeting-list></mg-greeting-list>
   `
 })

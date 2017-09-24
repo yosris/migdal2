@@ -3,7 +3,10 @@ Template for the greeting-list.component
 -->
 
 <ul>
-  <li *ngFor="let greet of greetings" >
+  <li *ngFor="let greet of greetings; let i=index" >
     {{greet}}
+    <button (click)="deleteItem(i)">
+      Delete Item
+    </button>
   </li>
 </ul>

@@ -1,0 +1,19 @@
+{
+  "name": "rxjs-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/es6-promise": "0.0.33",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "rxjs": "^5.4.3"
+  }
+}

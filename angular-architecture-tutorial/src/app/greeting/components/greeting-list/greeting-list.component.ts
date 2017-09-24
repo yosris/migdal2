@@ -20,6 +20,13 @@ export class GreetingListComponent{
   public greetings : string[] = [];
 
   constructor(private _greetingService : GreetingService){
-    this.greetings = _greetingService.getGreetings();
+    _greetingService.greetingsSubject.subscribe((greetings : string[]) => {
+      this.greetings = greetings;
+    });
+
+  }
+
+  deleteItem(index : number) {
+    this._greetingService.deleteGreeting(index);
   }
 }

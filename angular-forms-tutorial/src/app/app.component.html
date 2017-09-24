@@ -16,12 +16,15 @@
   <p *ngIf="firstNameNgModel.errors?.required">
     This field is required
   </p>
+  <p *ngIf="studentFormNgModel.controls?.lastName?.valid">
+    the last name is valid
+  </p>
   <label>
     last name
   </label>
   <input type="text" required name="lastName" [(ngModel)]="student.lastName" /> <br/>
   <p>
-    {{studentFormNgModel.controls.lastName.valid}}
+    {{studentFormNgModel.controls.lastName?.valid}}
   </p>
   <label>
     Age
@@ -31,7 +34,7 @@
     Email
   </label>
   <input type="text" name="email" [(ngModel)]="student.email" /> <br/>
-  <button [disabeled]="studentFormNgModel.valid"  type="submit">
+  <button [disabled]="studentFormNgModel.valid"  type="submit">
     Submit
   </button>
 </form>
