@@ -1,0 +1,17 @@
+<!-- navigation common to all pages -->
+<nav>
+  <ul>
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{'exact': true}">
+      <a [routerLink]="'/'" >Home Page</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/about" >about Page</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="/tasks" >Tasks Page</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+

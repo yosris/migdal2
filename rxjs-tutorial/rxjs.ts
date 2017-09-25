@@ -16,6 +16,10 @@ const myTimerObservable : Observable<string> = Observable.create((observer : Obs
         observer.next("hello from second timeout");
     }, 3000);
 
+
+    // the creation function of the observable
+    // can optionally return a function
+    // and this function will run when we dispose the observable
     return () => {
         console.log('incharge of cleanup');
     }
